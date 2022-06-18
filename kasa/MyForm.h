@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
-
+#include "Form2.h"
 namespace kasa {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -33,6 +33,7 @@ namespace kasa {
 		{
 			InitializeComponent();
 			label_to_add->Text = "Залишилось додати записів: " + sum_text;
+
 		}
 
 	protected:
@@ -53,19 +54,17 @@ namespace kasa {
 	private: System::Windows::Forms::Label^ label_PLAT;
 	private: System::Windows::Forms::Label^ label_POL;
 	private: System::Windows::Forms::Label^ label_SUMMA;
-
 	protected:
 	protected:
 	private: System::Windows::Forms::Label^ label_to_add;
 	private: System::Windows::Forms::Button^ button_add;
 	private: System::Windows::Forms::ListBox^ listBox_client;
 	private: System::Windows::Forms::Button^ button_search;
-	private: System::Windows::Forms::TextBox^ textBox_Searh_PLAT;
-	private: System::Windows::Forms::Label^ label_search_PLAT;
+
+
 	private: System::Windows::Forms::Button^ button_del;
 	private: System::Windows::Forms::Button^ button_edit;
 	private: System::Windows::Forms::TextBox^ textBox_edit_POL;
-
 	private: System::Windows::Forms::TextBox^ textBox_edit_SUMM;
 	private: System::Windows::Forms::Button^ button_edit_fin;
 	private: System::Windows::Forms::Label^ label1;
@@ -73,15 +72,9 @@ namespace kasa {
 	private: System::Windows::Forms::Button^ button_OTMEHA;
 	private: System::Windows::Forms::Button^ button_save;
 	private: System::Windows::Forms::Button^ button_load;
-
-
-
-
-
+	private: System::Windows::Forms::TextBox^ textBox_Searh_PLAT;
 
 	private: System::ComponentModel::IContainer^ components;
-
-
 
 	private:
 		/// <summary>
@@ -107,8 +100,6 @@ namespace kasa {
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->listBox_client = (gcnew System::Windows::Forms::ListBox());
 			this->button_search = (gcnew System::Windows::Forms::Button());
-			this->textBox_Searh_PLAT = (gcnew System::Windows::Forms::TextBox());
-			this->label_search_PLAT = (gcnew System::Windows::Forms::Label());
 			this->button_del = (gcnew System::Windows::Forms::Button());
 			this->button_edit = (gcnew System::Windows::Forms::Button());
 			this->textBox_edit_POL = (gcnew System::Windows::Forms::TextBox());
@@ -119,6 +110,7 @@ namespace kasa {
 			this->button_OTMEHA = (gcnew System::Windows::Forms::Button());
 			this->button_save = (gcnew System::Windows::Forms::Button());
 			this->button_load = (gcnew System::Windows::Forms::Button());
+			this->textBox_Searh_PLAT = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// textBox_PLAT
@@ -230,7 +222,7 @@ namespace kasa {
 			// 
 			this->button_search->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_search->Location = System::Drawing::Point(853, 111);
+			this->button_search->Location = System::Drawing::Point(550, 360);
 			this->button_search->Margin = System::Windows::Forms::Padding(4);
 			this->button_search->Name = L"button_search";
 			this->button_search->Size = System::Drawing::Size(195, 60);
@@ -239,32 +231,9 @@ namespace kasa {
 			this->button_search->UseVisualStyleBackColor = true;
 			this->button_search->Click += gcnew System::EventHandler(this, &MyForm::button_visual_Click);
 			// 
-			// textBox_Searh_PLAT
-			// 
-			this->textBox_Searh_PLAT->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox_Searh_PLAT->Location = System::Drawing::Point(853, 72);
-			this->textBox_Searh_PLAT->Margin = System::Windows::Forms::Padding(4);
-			this->textBox_Searh_PLAT->Multiline = true;
-			this->textBox_Searh_PLAT->Name = L"textBox_Searh_PLAT";
-			this->textBox_Searh_PLAT->Size = System::Drawing::Size(340, 31);
-			this->textBox_Searh_PLAT->TabIndex = 11;
-			// 
-			// label_search_PLAT
-			// 
-			this->label_search_PLAT->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label_search_PLAT->Location = System::Drawing::Point(848, 9);
-			this->label_search_PLAT->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label_search_PLAT->Name = L"label_search_PLAT";
-			this->label_search_PLAT->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->label_search_PLAT->Size = System::Drawing::Size(357, 59);
-			this->label_search_PLAT->TabIndex = 12;
-			this->label_search_PLAT->Text = L"Введіть розрахунковий рахунок платника.";
-			// 
 			// button_del
 			// 
-			this->button_del->Location = System::Drawing::Point(1055, 108);
+			this->button_del->Location = System::Drawing::Point(853, 185);
 			this->button_del->Name = L"button_del";
 			this->button_del->Size = System::Drawing::Size(135, 60);
 			this->button_del->TabIndex = 13;
@@ -274,7 +243,7 @@ namespace kasa {
 			// 
 			// button_edit
 			// 
-			this->button_edit->Location = System::Drawing::Point(853, 181);
+			this->button_edit->Location = System::Drawing::Point(853, 132);
 			this->button_edit->Name = L"button_edit";
 			this->button_edit->Size = System::Drawing::Size(337, 47);
 			this->button_edit->TabIndex = 14;
@@ -351,7 +320,7 @@ namespace kasa {
 			// 
 			// button_save
 			// 
-			this->button_save->Location = System::Drawing::Point(17, 447);
+			this->button_save->Location = System::Drawing::Point(17, 397);
 			this->button_save->Name = L"button_save";
 			this->button_save->Size = System::Drawing::Size(156, 23);
 			this->button_save->TabIndex = 21;
@@ -361,7 +330,7 @@ namespace kasa {
 			// 
 			// button_load
 			// 
-			this->button_load->Location = System::Drawing::Point(197, 447);
+			this->button_load->Location = System::Drawing::Point(197, 397);
 			this->button_load->Name = L"button_load";
 			this->button_load->Size = System::Drawing::Size(132, 23);
 			this->button_load->TabIndex = 22;
@@ -369,11 +338,22 @@ namespace kasa {
 			this->button_load->UseVisualStyleBackColor = true;
 			this->button_load->Click += gcnew System::EventHandler(this, &MyForm::button_load_Click);
 			// 
+			// textBox_Searh_PLAT
+			// 
+			this->textBox_Searh_PLAT->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox_Searh_PLAT->Location = System::Drawing::Point(853, 94);
+			this->textBox_Searh_PLAT->Margin = System::Windows::Forms::Padding(4);
+			this->textBox_Searh_PLAT->Multiline = true;
+			this->textBox_Searh_PLAT->Name = L"textBox_Searh_PLAT";
+			this->textBox_Searh_PLAT->Size = System::Drawing::Size(340, 31);
+			this->textBox_Searh_PLAT->TabIndex = 11;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1216, 493);
+			this->ClientSize = System::Drawing::Size(1221, 430);
 			this->Controls->Add(this->button_load);
 			this->Controls->Add(this->button_save);
 			this->Controls->Add(this->button_OTMEHA);
@@ -385,7 +365,6 @@ namespace kasa {
 			this->Controls->Add(this->button_edit_fin);
 			this->Controls->Add(this->textBox_edit_SUMM);
 			this->Controls->Add(this->textBox_edit_POL);
-			this->Controls->Add(this->label_search_PLAT);
 			this->Controls->Add(this->textBox_Searh_PLAT);
 			this->Controls->Add(this->listBox_client);
 			this->Controls->Add(this->button_add);
@@ -452,7 +431,7 @@ namespace kasa {
 					SPISOK[num].PLAT = msclr::interop::marshal_as<std::string>(textBox_PLAT->Text->ToString());
 					SPISOK[num].POL = msclr::interop::marshal_as<std::string>(textBox_POL->Text->ToString());
 					SPISOK[num].SUMMA = Convert::ToDouble(textBox_SUMMA->Text);
-					SPISOK[num].data = msclr::interop::marshal_as<std::string>(DateTimeNow->Day.ToString() + "." +DateTimeNow->Month.ToString() + "." + DateTimeNow->Year.ToString() + "-" +  DateTimeNow->Hour.ToString() + ":" + DateTimeNow->Minute.ToString() + ":" + DateTimeNow->Second.ToString());
+					SPISOK[num].data = msclr::interop::marshal_as<std::string>(DateTimeNow->Day.ToString() + "." + DateTimeNow->Month.ToString() + "." + DateTimeNow->Year.ToString() + "-" + DateTimeNow->Hour.ToString() + ":" + DateTimeNow->Minute.ToString() + ":" + DateTimeNow->Second.ToString());
 					num += 1;
 
 					enter_to_listbox(); //Занесення клієнтів в ListBox
@@ -485,6 +464,8 @@ namespace kasa {
 		}
 
 		if (chek == true) {
+			textBox_Searh_PLAT->Visible = true;;
+
 			button_del->Visible = false;
 			button_search->Visible = false;
 			button_edit->Visible = false;
@@ -563,28 +544,13 @@ namespace kasa {
 
 
 
-		   //Показ інформації про вибраного клієнта через textbox
+		  //Показ інформації про вибраного клієнта через textbox
 	private: System::Void button_visual_Click(System::Object^ sender, System::EventArgs^ e) {
-		bool check = false;
-		String^ text = "";
-
-		if (textBox_Searh_PLAT->Text != "") {
-			for (int i = 0; i < num; ++i) {
-				if ((SPISOK[i].PLAT + " (" + SPISOK[i].data + ")") == (msclr::interop::marshal_as<std::string>(textBox_Searh_PLAT->Text) + " (" + SPISOK[i].data + ")")) {
-					text += (print_messegbox(i)) + "\n\n";
-					check = true;
-				}
-			}
-
-			if (check == false) {
-				MessageBox::Show("Введеного вами розрахункового рахунку платника нема в списку бази даних.");
-			}
-			else
-				MessageBox::Show(text);
-		}
-		else
-			MessageBox::Show("Поле пошуку порожнє!");
+		Form2^ f2 = gcnew Form2(SPISOK, num);
+		f2->ShowDialog();
 	}
+
+
 
 		   //Показ інформації про вибраного клієнта через лістбокс
 	private: System::Void listBox_client_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
@@ -612,14 +578,15 @@ namespace kasa {
 
 		for (int j = 0; j < num; ++j) {
 			if (textBox_Searh_PLAT->Text == msclr::interop::marshal_as<String^>(SPISOK[j].PLAT)) {
-				for (int i = j -1 ; i < num - 1; ++i)
+				for (int i = j; i < num - 1; ++i)
 				{
 					SPISOK[i] = SPISOK[i + 1];
 				}
-				num -=1;
+				num -= 1;
 				chek = true;
 				textBox_Searh_PLAT->Text = "";
 				sum_text += 1;
+				label_to_add->Text = "Можливість додати ще " + sum_text + " запис(ів).";
 				enter_to_listbox();
 				break;
 			}
@@ -638,10 +605,10 @@ namespace kasa {
 		e->Handled = true;
 	}
 	private: System::Void button_save_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 		ofstream file;
-		file.open("magazin.txt");
-		for (int i = 0; i < MAX; ++i)
+		file.open(filename);
+		for (int i = 0; i < num; ++i)
 		{
 			file << SPISOK[i].PLAT << " " << SPISOK[i].POL << " " << SPISOK[i].SUMMA << " " << SPISOK[i].data << endl;
 		}
@@ -651,21 +618,21 @@ namespace kasa {
 
 	private: System::Void button_load_Click(System::Object^ sender, System::EventArgs^ e) {
 		OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog;
-		ifstream file("magazin.txt");
+		ifstream file(filename);
 		num = 0;
-		sum_text = MAX;
+
 		for (int i = 0; !file.eof(); ++i)
 		{
 			file >> SPISOK[i].PLAT >> SPISOK[i].POL >> SPISOK[i].SUMMA >> SPISOK[i].data;
 			num += 1;
 		}
 		num -= 1;
-		MessageBox::Show(num.ToString());
-
 		file.close();
 
-		enter_to_listbox();
+		sum_text = MAX - num;
 
+		label_to_add->Text = "Можливість додати ще " + sum_text + " запис(ів).";
+		enter_to_listbox();
 	}
 	};
 }
